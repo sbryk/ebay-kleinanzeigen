@@ -47,6 +47,19 @@ class Item:
 
 
 def get_items_per_url(url):
+    headers = {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "de,en-US;q=0.7,en;q=0.3",
+        "Dnt": "1",
+        "Host": "www.ebay-kleinanzeigen.de",
+        "Referer": "https://www.ebay-kleinanzeigen.de",
+        "TE": "Trailers",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0",
+        "X-Moz": "prefetch"
+    }
+    qq = requests.get(url,headers=headers)
     qq = requests.get(url)
 
     text = qq.text
